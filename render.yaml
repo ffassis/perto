@@ -1,0 +1,19 @@
+# Publicação na Render: no painel, New > Blueprint e escolha este repositório.
+# O plano pago (Starter) é necessário para ter disco que guarda mensagens e arquivos.
+services:
+  - type: web
+    name: perto
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: ADMIN_TOKEN        # senha do painel /admin (veja em Environment depois de criar)
+        generateValue: true
+      - key: DATA_FILE          # dados e uploads ficam no disco
+        value: /data/data.json
+    disk:
+      name: perto-data
+      mountPath: /data
+      sizeGB: 5

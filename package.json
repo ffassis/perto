@@ -1,0 +1,9 @@
+{
+  "name": "perto",
+  "version": "1.0.0",
+  "description": "Rede social por proximidade: mapa de pessoas por perto, pedido de conversa, aceite e chat.",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "web-push": "^3.6.7",
+    "ws": "^8.18.0" }
+}
